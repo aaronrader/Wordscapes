@@ -26,7 +26,7 @@ namespace WordscapesCLIClient
 
       } while (letterGroup.Length == 0);
 
-      List<string> results = words.GetByWord(letterGroup);
+      List<string> results = words.GetByLetterGroup(letterGroup);
       Console.WriteLine("Here is your list of words:");
       foreach(string result in results)
       {

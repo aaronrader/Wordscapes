@@ -1,14 +1,12 @@
-﻿using System.IO;
-using System.Text;
+﻿/*
+ * Project:   WordscapesGUI
+ * Author:    Aaron Rader
+ * Date:      2024-02-22
+ */
+
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WordscapesLibrary;
 
 namespace WordscapesGUI
@@ -18,7 +16,7 @@ namespace WordscapesGUI
   /// </summary>
   public partial class MainWindow : Window
   {
-    IWordsContainer container;
+    readonly IWordsContainer container;
 
     public MainWindow()
     {
@@ -81,7 +79,7 @@ namespace WordscapesGUI
       container.MinWordLength = (uint)minLengthSlider.Value;
 
       //Retrieve the results
-      List<string> results = container.GetByWord(searchField.Text.ToLower());
+      List<string> results = container.GetByLetterGroup(searchField.Text.ToLower());
 
       string data = string.Empty;
       foreach (string result in results)

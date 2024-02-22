@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Project:   WordscapesLibrary
+ * Author:    Aaron Rader
+ * Date:      2024-02-22
+ */
 
 namespace WordscapesLibrary
 {
@@ -32,7 +31,7 @@ namespace WordscapesLibrary
       return _words;
     }
 
-    public List<string> GetByWord(string wordToFind)
+    public List<string> GetByLetterGroup(string groupToFind)
     {
       List<string> results = new List<string>();
 
@@ -44,7 +43,7 @@ namespace WordscapesLibrary
 
         //Copy the word to search so that I can discard letters that have already been
         //searched without changing the original string
-        string lettersToSearch = wordToFind;
+        string lettersToSearch = groupToFind;
         bool found = true;
 
         foreach (char letter in word)

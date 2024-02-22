@@ -1,4 +1,10 @@
-﻿namespace WordscapesLibrary
+﻿/*
+ * Project:   WordscapesLibrary
+ * Author:    Aaron Rader
+ * Date:      2024-02-22
+ */
+
+namespace WordscapesLibrary
 {
   public interface IWordsContainer
   {
@@ -20,7 +26,7 @@
     }
 
     public List<string> GetAllWords();
-    public List<string> GetByWord(string wordToFind);
+    public List<string> GetByLetterGroup(string groupToFind);
     public List<string> GetByLetter(char letterToFind);
   }
 }
